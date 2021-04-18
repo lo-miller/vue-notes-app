@@ -1,41 +1,24 @@
-	<template>
-	  <div id="app">
-	    <div class="toolbar">
-	      <button class="toolbar-button">New</button>
-	      <button class="toolbar-button">Delete</button>
-	      <input class="toolbar-search" type="text" placeholder="Search...">
-	    </div>
-	    <div class="note-container">
-	      <div class="note-selectors">
-	        <div class="note-selector active">
-	          <p class="note-selector-title">First note...</p>
-	          <p class="note-selector-timestamp">Timestamp here...</p>
-	        </div>
-	        <div class="note-selector">
-	          <p class="note-selector-title">Second note...</p>
-	          <p class="note-selector-timestamp">Timestamp here...</p>
-	        </div>
-	        <div class="note-selector">
-	          <p class="note-selector-title">Third note...</p>
-	          <p class="note-selector-timestamp">Timestamp here...</p>
-	        </div>
-	      </div>
-	      <div class="note-editor">
-	        <p class="note-editor-info">Timestamp here...</p>
-	        <textarea class="note-editor-input">
-	          First note...
-	          Note text here...
-	        </textarea>
-	      </div>
-	    </div>
-	  </div>
-	</template>
-	<script>
+<template>
+  <div id="app">
+    <Toolbar />
+    <NoteContainer />
+  </div>
+</template>
+
+
+<script>
+import Toolbar from "./components/Toolbar.vue";
+import NoteContainer from "./components/NoteContainer.vue";
 export default {
   name: "app",
+  components: {
+    Toolbar,
+    NoteContainer,
+  },
 };
 </script>
-	<style>
+
+<style>
 /* RESET */
 * {
     margin: 0;
@@ -50,7 +33,7 @@ export default {
     flex-direction: column;
     min-height: 100vh;
 }
-.toolbar {
+/* .toolbar {
     padding: 0.5em;
 }
 .toolbar-button,
@@ -60,7 +43,7 @@ export default {
 }
 .toolbar-search {
     float: right;
-}
+} */
 .note-container {
     display: flex;
     flex: 1;
